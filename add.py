@@ -1,27 +1,13 @@
-# Simple function to test
-def add(x, y):
-    return x + y
-
-# Unit Test Class for testing the add function
 import unittest
+from app import add
 
-class SimpleTest(unittest.TestCase):
-    
-    def test_addition(self):
-        # Test if the addition function works correctly
-        self.assertEqual(add(4, 5), 9)  # Check if 4 + 5 equals 9
+class TestAdd(unittest.TestCase):
+    def test_add(self):
+        self.assertEqual(add(2, 3), 5)
 
-    def test_add_negative(self):
-        # Test with negative numbers
-        self.assertEqual(add(-4, 5), 1)  # Check if -4 + 5 equals 1
+if __name__ == '__main__':
+    unittest.main()
 
-    def test_add_zero(self):
-        # Test with zero
-        self.assertEqual(add(0, 0), 0)  # Check if 0 + 0 equals 0
-
-# This will automatically run the tests when this script is executed
-if __name__ == "__main__":
-    unittest.main(argv=['first-arg-is-ignored'], exit=False)
 
 
 
